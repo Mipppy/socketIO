@@ -11,5 +11,15 @@ def hello():
 def test():
     return "success!"
 
+@socket.listen("disconnect")
+def disconnect():
+    print("disconnect")
+    return "Disconnecting!"
+
+@socket.listen("connection")
+def connect():
+    print("connection")
+    return "Connection!"
+
 if __name__ == "__main__":
     app.run()

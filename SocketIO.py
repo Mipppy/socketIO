@@ -2,6 +2,7 @@ from flask import Flask, request, session, jsonify
 
 class SocketIO:
     messages = []
+        
     def __init__(self, app : Flask):
         self.app = app
         @self.app.route("/socket", methods=["POST"])
