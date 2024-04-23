@@ -1,0 +1,24 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <button onclick="r()">Right button</button>
+    <button onclick="w()">Wrong Button</button>
+    <script src="{{url_for('static', filename='SocketIO.js')}}"></script>
+    <script>
+        s = new SocketIO()
+        function r() {
+            d = s.emit("test", "hello")
+            d.then((data) => { alert(data) })
+        }
+        function w() {
+            d = s.emit("nottest", "nothing")
+            console.log(d)
+        }
+    </script>
+</body>
+
+</html>
